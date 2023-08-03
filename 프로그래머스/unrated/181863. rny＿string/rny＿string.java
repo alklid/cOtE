@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 class Solution {
     public String solution(String rny_string) {
         validation(rny_string);
@@ -10,10 +12,12 @@ class Solution {
         int len = input.length();
         if (len < 1 || len > 100) {
             // bad input, throw exception
+            System.out.println("exception");
         }
         
-        if (!input.matches("^[a-z]$")) {
+        if (!Pattern.matches("^[a-z]*$", input)) {
             // bad input, throw exception
+            System.out.println("exception");
         }
     }
 }
