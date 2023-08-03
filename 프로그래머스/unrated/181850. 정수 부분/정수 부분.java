@@ -2,7 +2,7 @@ class Solution {
     public int solution(double flo) {
         validation(flo);
         
-        int answer = (int)flo;
+        int answer = new Double(flo).intValue();
         return answer;
     }
     
