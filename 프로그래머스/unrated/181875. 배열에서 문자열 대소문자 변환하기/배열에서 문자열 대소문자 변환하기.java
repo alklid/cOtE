@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 class Solution {
     public String[] solution(String[] strArr) {
         validation(strArr);
@@ -19,12 +21,12 @@ class Solution {
     static void validation(String[] strArr) {
         int len = strArr.length;
         if (len < 1 || len > 20) {
-            // bad input, throw exception
+            System.out.println("exception");
         }
         
         String str = String.join("", strArr);
-        if (!str.matches("^[a-zA-Z]$")) {
-            // bad input, throw exception
+        if (!Pattern.matches("^[a-zA-Z]*$", str)) {
+            System.out.println("exception");
         }
     }
 }
