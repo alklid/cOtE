@@ -17,11 +17,11 @@ class Solution {
             // bad input, throw exception
         }
         
-        if (!my_string.matches("^[a-z]$")) {
+        if (!my_string.matches("^[a-z]*$")) {
             // bad input, throw exception
         }
         
-        if (!is_suffix.matches("^[a-z]$")) {
+        if (!is_suffix.matches("^[a-z]*$")) {
             // bad input, throw exception
         }
     }
