@@ -17,7 +17,7 @@ class Solution {
             // bad input, throw exception
         }
         
-        if (!my_string.matches("^[a-zA-Z0-9]$")) {
+        if (!my_string.matches("^[a-zA-Z0-9]*$")) {
             // bad input, throw exception
         }
     }
