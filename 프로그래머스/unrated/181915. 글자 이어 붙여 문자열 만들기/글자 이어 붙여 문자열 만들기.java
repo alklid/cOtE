@@ -1,15 +1,14 @@
 class Solution {
     public String solution(String my_string, int[] index_list) {
-        validation(my_string, index_list);
+        // validation(my_string, index_list);
 
-        String answer = "";
-        
-        char[] ch = my_string.toCharArray();
+        StringBuffer answer = new StringBuffer();
+
         for (int i : index_list) {
-            answer += ch[i];
+            answer.append(my_string.charAt(i));
         }
         
-        return answer;
+        return answer.toString();
     }
     
     static void validation(String my_string, int[] index_list) {
