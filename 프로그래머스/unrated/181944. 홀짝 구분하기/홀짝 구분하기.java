@@ -7,12 +7,7 @@ public class Solution {
         
         validation(n);
         
-        String evenOrOdd = "even";
-        if (n == 1 || n % 2 == 1) {
-            evenOrOdd = "odd";
-        }
-        
-        System.out.printf("%d is %s", n, evenOrOdd);
+        System.out.printf("%d is %s", n, (n % 2 == 0) ? "even" : "odd");
     }
     
     static void validation(int input) {
