@@ -1,10 +1,10 @@
 # [unrated] 더 크게 합치기 - 181939 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181939) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181939?language=java) 
 
 ### 성능 요약
 
-메모리: 67.1 MB, 시간: 1.84 ms
+메모리: 76.2 MB, 시간: 9.10 ms
 
 ### 구분
 
