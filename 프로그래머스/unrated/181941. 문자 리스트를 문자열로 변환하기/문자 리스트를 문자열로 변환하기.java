@@ -2,13 +2,7 @@ class Solution {
     public String solution(String[] arr) {
         validation(arr);
         
-        String answer = "";
-        
-        int len = arr.length;
-        for (int i=0; i<len; i++) {
-            answer += arr[i];
-        }
-        
+        String answer = String.join("", arr);
         return answer;
     }
     
