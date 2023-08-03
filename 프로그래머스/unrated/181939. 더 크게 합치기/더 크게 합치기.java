@@ -2,8 +2,8 @@ class Solution {
     public int solution(int a, int b) {
         validation(a, b);
         
-        int concat = Integer.parseInt(""+a+b);
-        int reverse = Integer.parseInt(""+b+a);
+        int concat = Integer.valueOf(Integer.toString(a) + Integer.toString(b));
+        int reverse = Integer.valueOf(Integer.toString(b) + Integer.toString(a));
         int answer = (concat >= reverse) ? concat : reverse;
         return answer;
     }
