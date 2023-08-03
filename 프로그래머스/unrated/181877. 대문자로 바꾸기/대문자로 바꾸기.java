@@ -1,3 +1,5 @@
+import java.util.regex.Pattern;
+
 class Solution {
     public String solution(String myString) {
         String answer = myString.toUpperCase();
@@ -7,11 +9,11 @@ class Solution {
     static void validation(String input) {
         int len = input.length();
         if (len < 1 || len > 100000) {
-            // bad input, throw exception
+            System.out.println("exception");
         }
         
-        if (!input.matches("^[a-zA-Z]$")) {
-            // bad input, throw exception
+        if (!Pattern.matches("^[a-zA-Z]*$", input)) {
+            System.out.println("exception");
         }
     }
 }
