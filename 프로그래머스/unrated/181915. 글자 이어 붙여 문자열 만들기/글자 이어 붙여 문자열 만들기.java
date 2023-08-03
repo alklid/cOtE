@@ -1,11 +1,12 @@
 class Solution {
     public String solution(String my_string, int[] index_list) {
-        // validation(my_string, index_list);
+        validation(my_string, index_list);
 
         StringBuffer answer = new StringBuffer();
 
+        char[] ch = my_string.toCharArray();
         for (int i : index_list) {
-            answer.append(my_string.charAt(i));
+            answer.append(ch[i]);
         }
         
         return answer.toString();
