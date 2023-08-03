@@ -1,10 +1,10 @@
 # [unrated] 문자열 바꿔서 찾기 - 181864 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181864) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181864?language=java) 
 
 ### 성능 요약
 
-메모리: 65.5 MB, 시간: 0.20 ms
+메모리: 68.3 MB, 시간: 0.12 ms
 
 ### 구분
 

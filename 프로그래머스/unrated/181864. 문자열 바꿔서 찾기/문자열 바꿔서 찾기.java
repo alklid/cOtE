@@ -2,6 +2,7 @@ class Solution {
     public int solution(String myString, String pat) {
         validation(myString, pat);
         
+        /*
         StringBuffer sb = new StringBuffer();
         for (char ch : myString.toCharArray()) {
             if (ch == 'A') {
@@ -12,6 +13,9 @@ class Solution {
             }
         }
         String reverse = sb.toString();
+        */
+        
+        String reverse = myString.replace("A", "Z").replace("B", "A").replace("Z","B");
         
         int answer = (reverse.indexOf(pat) != -1) ? 1 : 0;
         return answer;
