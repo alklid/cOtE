@@ -9,16 +9,16 @@ class Solution {
     static void validation(String myString, String search) {
         int len = myString.length();
         if (len < 1 || len > 100000) {
-            // bad input, throw exception
+            System.out.println("exception");
         }
         
         int searchLen = search.length();
         if (searchLen < 1 || searchLen > 300) {
-            // bad input, throw exception
+            System.out.println("exception");
         }
         
-        if (!myString.matches("^[a-zA-Z]$") || !search.matches("^[a-zA-Z]$")) {
-            // bad input, throw exception
+        if (!myString.matches("^[a-zA-Z]*$") || !search.matches("^[a-zA-Z]*$")) {
+            System.out.println("exception");
         }
     }
 }
