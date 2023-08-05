@@ -5,14 +5,14 @@ class Solution {
     public String[] solution(String[] todo_list, boolean[] finished) {
         int len = todo_list.length;
             
-        List<String> todo = new ArrayList<String>();
+        String todo = "";
         for (int i=0; i<len; i++) {
             if (finished[i] == false) {
-                todo.add(todo_list[i]);
+                todo += todo_list[i] + ",";
             }
         }
         
-        String[] answer = todo.toArray(new String[todo.size()]);
+        String[] answer = todo.split(",");
         return answer;
     }
 }
