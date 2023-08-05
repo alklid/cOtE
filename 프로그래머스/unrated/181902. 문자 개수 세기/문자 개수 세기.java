@@ -4,14 +4,13 @@ class Solution {
         
         char[] chars = my_string.toCharArray();
         for (char ch : chars) {
-            if (Character.isUpperCase(ch)) {
-                int idx = ch - 65;
-                answer[idx]++;
-            }
+            int idx = ch - 'A';
+
             if (Character.isLowerCase(ch)) {
-                int idx = ch - 71;
-                answer[idx]++;
+                idx -= 6;
             }
+            
+            answer[idx]++;
         }
         
         return answer;
