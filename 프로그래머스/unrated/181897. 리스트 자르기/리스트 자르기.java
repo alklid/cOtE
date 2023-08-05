@@ -25,14 +25,11 @@ class Solution {
             interval = 2;
         }
         
-        int len = ((endIdx - startIdx + 1) % interval == 0) ? 
-                        (endIdx - startIdx + 1) / interval : 
-                        ((endIdx - startIdx + 1) / interval) + 1;
+        int len = (endIdx - startIdx + interval) / interval;
         int[] answer = new int[len];
         
         int idx = 0;
         for (int i=startIdx; i<=endIdx; i+=interval) {
-            System.out.println("i : " + i);
             answer[idx] = num_list[i];
             idx++;
         }
