@@ -6,12 +6,7 @@ class Solution {
         int[] diceArr = new int[]{a,b,c,d};
         Map<Integer, Integer> dice = new HashMap<>();
         for (int num : diceArr) {
-            if (dice.containsKey(num)) {
-                dice.put(num, dice.get(num)+1);
-            }
-            else {
-                dice.put(num, 1);
-            }
+            dice.put(num, dice.getOrDefault(num, 0) + 1);
         }
         
         int answer = 0;
