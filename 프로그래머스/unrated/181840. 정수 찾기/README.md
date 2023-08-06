@@ -1,10 +1,10 @@
 # [unrated] 정수 찾기 - 181840 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181840) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181840?language=java) 
 
 ### 성능 요약
 
-메모리: 67.4 MB, 시간: 0.02 ms
+메모리: 75.8 MB, 시간: 1.46 ms
 
 ### 구분
 

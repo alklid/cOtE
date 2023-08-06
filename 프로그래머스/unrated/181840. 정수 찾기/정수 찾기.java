@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.stream.IntStream;
 
 class Solution {
     public int solution(int[] num_list, int n) {
@@ -11,6 +11,7 @@ class Solution {
         return answer;
         */
         
+        /*
         int answer = 0;
         for (int num : num_list) {
             if (num == n) {
@@ -19,6 +20,10 @@ class Solution {
             }
         }
         
+        return answer;
+        */
+        
+        int answer = IntStream.of(num_list).anyMatch(num -> num == n) ? 1 : 0;
         return answer;
     }
 }
