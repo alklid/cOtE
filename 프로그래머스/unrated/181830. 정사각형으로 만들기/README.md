@@ -1,10 +1,10 @@
 # [unrated] 정사각형으로 만들기 - 181830 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181830) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181830?language=java) 
 
 ### 성능 요약
 
-메모리: 80.4 MB, 시간: 0.03 ms
+메모리: 80.9 MB, 시간: 0.09 ms
 
 ### 구분
 
