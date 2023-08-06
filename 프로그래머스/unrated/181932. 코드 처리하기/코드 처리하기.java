@@ -10,14 +10,8 @@ class Solution {
             }
             
             else {
-                // 짝수
-                if (i % 2 == 0) {
-                    if (mode == 0) ret.append(codes[i]);
-                }
-                
-                // 홀수
-                else {
-                    if (mode == 1) ret.append(codes[i]);
+                if (i % 2 == mode) {
+                    ret.append(codes[i]);
                 }
             }
         }

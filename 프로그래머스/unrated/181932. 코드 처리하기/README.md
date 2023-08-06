@@ -1,10 +1,10 @@
 # [unrated] 코드 처리하기 - 181932 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181932) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181932?language=java) 
 
 ### 성능 요약
 
-메모리: 76.7 MB, 시간: 0.08 ms
+메모리: 87.4 MB, 시간: 0.09 ms
 
 ### 구분
 
