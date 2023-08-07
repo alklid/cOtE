@@ -22,6 +22,12 @@ class Solution {
             }
         }
         
-        return stackList.stream().mapToInt(num -> num).toArray();
+        // return stackList.stream().mapToInt(num -> num).toArray();
+        
+        int[] answer = new int[stackList.size()];
+        for(int n=0; n<answer.length; n++) {
+            answer[answer.length - 1 - n] = stackList.pop();
+        }
+        return answer;
     }
 }
