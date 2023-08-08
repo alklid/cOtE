@@ -1,14 +1,6 @@
 class Solution {
     public String solution(String n_str) {
-        String answer = n_str;
-        
-        while (true) {
-            if (!answer.startsWith("0")) {
-                break;
-            }
-            answer = answer.substring(1);
-        }
-        
+        String answer = String.valueOf(Integer.parseInt(n_str));
         return answer;
     }
 }
