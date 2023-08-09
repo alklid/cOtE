@@ -2,6 +2,7 @@ import java.util.*;
 
 class Solution {
     public int solution(String before, String after) {
+        /*
         Map<String, Integer> map = new HashMap<>();
         for (String s : before.split("")) {
             map.put(s, map.getOrDefault(s, 0) + 1);
@@ -19,5 +20,14 @@ class Solution {
         }
         
         return answer;
+        */
+        
+        char[] beforeArr = before.toCharArray();
+        char[] afterArr = after.toCharArray();
+        
+        Arrays.sort(beforeArr);
+        Arrays.sort(afterArr);
+        
+        return new String(beforeArr).equals(new String(afterArr)) ? 1 : 0;
     }
 }
