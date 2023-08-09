@@ -1,31 +1,8 @@
 class Solution {
     public int solution(int[] numbers, int k) {
-        Node root = new Node(numbers[0]);
-        for (int i=1; i<numbers.length; i++) {
-            Node node = new Node(numbers[i]);
-            Node n = root;
-            while (n.next != null) {
-                n = n.next;
-            }
-            n.next = node;
-            
-            if (i == numbers.length-1) {
-                node.next = root;
-            }
-        }
-        
-        Node findNode = root;
-        for (int i=0; i<k-1; i++) {
-            findNode = findNode.next.next;
-        }
-        int answer = findNode.val;
-        return answer;
-    }
-    
-    static class Node {
-        public int val;
-        public Node next;
-        
-        public Node(int val) { this.val = val;}
+        // 공을 받는 사람 순서를 찾고 (k * 2)
+        // 공을 던지는 사람 순서로 변경 ((K -1) * 2)
+        // 순환되는 구조이므로 나머지를 통해 위치를 찾음 % numbers.length
+        return numbers[((k - 1) * 2) % numbers.length];
     }
 }
