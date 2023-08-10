@@ -1,7 +1,21 @@
 import java.util.Arrays;
 
+
+/**
+* 연속된 숫자배열의 합이 원하는 값과 같도록
+**/
 class Solution {
     public int[] solution(int num, int total) {
+        int[] answer = new int[num];
+        
+        int start = (total / num) - ((num - 1) / 2);
+        for (int i=0; i<num; i++) {
+            answer[i] = start + i;
+        }
+        
+        return answer;
+        
+        /*
         int[] answer = new int[num];
         
         int mid = total / num;
@@ -19,5 +33,6 @@ class Solution {
 
         Arrays.sort(answer);
         return answer;
+        */
     }
 }
