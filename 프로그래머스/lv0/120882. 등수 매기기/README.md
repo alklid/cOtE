@@ -1,10 +1,10 @@
 # [level 0] 등수 매기기 - 120882 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120882#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120882?language=java) 
 
 ### 성능 요약
 
-메모리: 74.5 MB, 시간: 0.88 ms
+메모리: 74.4 MB, 시간: 0.27 ms
 
 ### 구분
 
