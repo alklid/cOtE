@@ -1,5 +1,10 @@
 import java.util.*;
 
+/**
+* 최대공약수
+* 기약분수
+* 소인수분해
+**/
 class Solution {
     public int solution(int a, int b) {
         // 최대공약수로 나눠 기약분수
