@@ -1,59 +1,34 @@
 class Solution {
     public int solution(String s) {
-        int minCompressSize = Integer.MAX_VALUE;
-        for (int length=1; length<=s.length(); length++) {
-            // 길이만큼 자른 문자 배열 구하기
-            String[] split = splitWord(s, length);
-
-            // 압축된 문자열 구하기
-            String compress = compress(split);
-            minCompressSize = Math.min(minCompressSize, compress.length());
-
+        int min = s.length();
+        int len = s.length()/2+1;
+        for(int i = 1; i < len; i++) {
+            String before = "";
+            int sum = 0;
+            int cnt = 1;
+            for(int j = 0; j < s.length();) {               
+                int start = j;
+                j = (j+i > s.length()) ? s.length():j+i;
+                String temp = s.substring(start, j);
+                if(temp.equals(before)) {
+                    cnt++;
+                } else {
+                    if(cnt != 1) {
+                        sum += (int)Math.log10(cnt)+1;
+                    }
+                    cnt = 1;
+                    sum+=before.length();
+                    before = temp;
+                }
+            }
+            sum+=before.length();
+            if(cnt != 1) {
+                sum += (int)Math.log10(cnt)+1;
+            }
+            min = (min > sum) ? sum : min;
         }
 
-        return minCompressSize;
+        return min;
     }
     
-    private String[] splitWord(String s, int length) {
-        int splitSize = (s.length() / length) + ((s.length() % length != 0) ? 1 : 0);
-        String[] split = new String[splitSize];
-
-        for (int i=0; i<split.length; i++) {
-            int startIdx = i * length;
-            int endIdx = Math.min((i * length) + length, s.length());
-
-            String word = s.substring(startIdx, endIdx);
-            split[i] = word;
-        }
-        return split;
-    }
-
-    private String compress(String[] split) {
-        StringBuffer sb = new StringBuffer();
-
-        for (int i=0; i<split.length; i++) {
-            if (split[i].isEmpty()) {
-                continue;
-            }
-
-            String word = split[i];
-            int compCount = 1;
-            for (int j=i+1; j<split.length; j++) {
-                if (word.equals(split[j])) {
-                    compCount++;
-                    split[j] = "";
-                }
-                else {
-                    break;
-                }
-            }
-
-            if (compCount != 1) {
-                sb.append(compCount);
-            }
-            sb.append(word);
-        }
-
-        return sb.toString();
-    }
 }
