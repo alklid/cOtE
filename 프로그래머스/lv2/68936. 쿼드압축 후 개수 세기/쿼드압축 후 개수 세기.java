@@ -1,42 +1,44 @@
 class Solution {
-    public int[] solution(int[][] arr) {
-        return compress(arr, 0, 0, arr.length);
+    
+    private static class Count {
+        public final int zero;
+        public final int one;
+
+        public Count(int zero, int one) {
+            this.zero = zero;
+            this.one = one;
+        }
+
+        public Count add(Count count) {
+            return new Count(zero + count.zero, one + count.one);
+        }
     }
     
-    private int[] compress(int[][] arr, int x, int y, int size) {
-        int[] count = new int[2];
-
-        // 같은 수로 채워져 있으면 return 종료
-        int countZero = 0;
-        int countOne = 0;
-        for (int i=y; i<y+size; i++) {
-            for (int j=x; j<x+size; j++) {
-                if (arr[i][j] == 1) {
-                    countOne++;
-                }
-                else {
-                    countZero++;
+    public int[] solution(int[][] arr) {
+        Count count = count(arr, 0, 0, arr.length);
+        return new int[]{count.zero, count.one};
+    }
+    
+    private Count count(int[][] arr, int x, int y, int size) {
+        // 같은 수로 채워져 있는지 확인
+        for (int nx=x; nx<x+size; nx++) {
+            for (int ny=y; ny<y+size; ny++) {
+                // 만약 다른수가 나오면 해당 영역을 분리해서 다시 확인
+                if (arr[ny][nx] != arr[y][x]) {
+                    return count(arr, x, y, size/2)
+                        .add(count(arr, x+size/2, y, size/2))
+                        .add(count(arr, x, y+size/2, size/2))
+                        .add(count(arr, x+size/2, y+size/2, size/2));
                 }
             }
         }
-        if (countZero == size * size) {
-            count[0] = 1;
-            return count;
+
+        // 모두 같은 수로 채워져 있다면
+        if (arr[y][x] == 1) {
+            return new Count(0, 1);
         }
-        if (countOne == size * size) {
-            count[1] = 1;
-            return count;
+        else {
+            return new Count(1, 0);
         }
-
-        // 채워져 있지 않으면 쪼개서 재귀 호출
-        int[] first = compress(arr, x, y, size/2);
-        int[] second = compress(arr, x+size/2, y, size/2);
-        int[] third = compress(arr, x, y+size/2, size/2);
-        int[] fourth = compress(arr, x+size/2, y+size/2, size/2);
-
-        count[0] += first[0] + second[0] + third[0] + fourth[0];
-        count[1] += first[1] + second[1] + third[1] + fourth[1];
-
-        return count;
     }
 }
