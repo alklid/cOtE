@@ -6,21 +6,20 @@ class Solution {
     private static final char[] CHARS = "AEIOU".toCharArray();
     
     public int solution(String word) {
-        return dic("").indexOf(word);
+        List<String> words = new ArrayList<>();
+        dic("", words);
+        return words.indexOf(word);
     }
     
     // 사전 만들기
-    private List<String> dic(String word) {
-        List<String> words = new ArrayList<>();
+    private void dic(String word, List<String> words) {
         words.add(word);
 
         // 종료 조건 : 5글자가 되면 종료
-        if (word.length() == 5) return words;
+        if (word.length() == 5) return;
 
         for (char c : CHARS) {
-            words.addAll(dic(word + c));
+            dic(word + c, words);
         }
-
-        return words;
     }
 }
