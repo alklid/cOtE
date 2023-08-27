@@ -1,15 +1,15 @@
 class Solution {
     public int[] solution(int brown, int yellow) {
         int square = brown + yellow;
-        for (int width=3; width<square; width++) {
-            int height = square / width;
-            if (square % width == 0 && width >= height) {
+        for (int height=3; height<square; height++) {
+            int width = square / height;
+            if (square % height == 0 && width >= height) {
                 if (isCarpet(brown, yellow, width, height)) {
                     return new int[]{width, height};
                 }
             }
         }
-        
+
         return new int[]{};
     }
     
