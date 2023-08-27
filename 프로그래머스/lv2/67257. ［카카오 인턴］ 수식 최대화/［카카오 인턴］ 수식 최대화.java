@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Solution {
-    
+
     private final static String[][] calcPriorities = new String[][]{
         {"*", "+", "-"},
         {"*", "-", "+"},
@@ -12,7 +12,7 @@ class Solution {
     };
     
     public long solution(String expression) {
-        // 연산식 파싱
+        // 연산식 파싱, 파싱구분자를 포함하여 파싱
         StringTokenizer tokenizer = new StringTokenizer(expression, "*+-", true);
         List<String> expList = new LinkedList<>();
         while (tokenizer.hasMoreTokens()) {
