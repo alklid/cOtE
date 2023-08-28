@@ -4,6 +4,38 @@ import java.util.Set;
 
 class Solution {
     public int solution(String[] user_id, String[] banned_id) {
+        // ban 대상이 되는 아이디 찾기
+        // banIds 구조
+        //  [0] : banned_id[0] 에 매칭되는 ids
+        //  [1] : banned_id[1] 에 매칭되는 ids
+        String[][] banIds = Arrays.stream(banned_id)
+            .map(banned -> banned.replace("*", "."))
+            .map(banned -> Arrays.stream(user_id)
+                .filter(id -> id.matches(banned))
+                .toArray(String[]::new))
+            .toArray(String[][]::new);
+
+        // ban 대상으로 조합 만들기
+        Set<Set<String>> banSet = new HashSet<>();
+        count(0, new HashSet<>(), banIds, banSet);
+        return banSet.size();
+    }
+    
+    private void count(int index, Set<String> banned, String[][] banIds, Set<Set<String>> banSet) {
+        if (index == banIds.length) {
+            banSet.add(new HashSet<>(banned)); // 모든 불량 사용자 아이디를 선택
+            return;
+        }
+
+        for (String id : banIds[index]) {
+            if (banned.contains(id)) continue; // banned 포함된 id 를 제외하고, banIds 에서 index 번째부터 가능한 조합
+            banned.add(id);
+            count(index + 1, banned, banIds, banSet);
+            banned.remove(id);
+        }
+    }
+    
+    public int solution1(String[] user_id, String[] banned_id) {
         // 순열 만들기
         String[] result = new String[user_id.length];
         boolean[] visited = new boolean[user_id.length];
