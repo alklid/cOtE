@@ -3,16 +3,14 @@ import java.util.Arrays;
 class Solution {
     public int solution(int[] citations) {
         Arrays.sort(citations);
-        
-        int max = 0;
-        for (int i = citations.length-1; i > -1; i--) {
-            // 정렬이후에 역순으로 조회하면, 해당 원소의 값 보다 큰 원소들의 갯수는 citations.length - i 와 같음.
-            // 원소의 값은 점점 감소(정렬이후에 역순으로 조회)하고, 원소 값 이상인 것의 개수는 점점 감소 함.
-            // 이 두 값의 최소값의 변화가 증가하다가 감소하는 지점
-            int min = (int)Math.min(citations[i], citations.length - i);
-            if(max < min) max = min;
+        for (int h = citations.length; h > 0; h--) {
+            // 오름차순 정렬이기 때문에, 뒤에서 i 번째 있는 원소의 값이 i 보다 이상이면 i 번 인용된 논문의 갯수가 그만큼 있다는 것
+            // 3회 이상 인용된 눈문이 3개 이상인지 검사하려면, 뒤에서 3번째 논문이 3회 이상 인용되었는지 확인
+            if (citations[citations.length - h] >= h) {
+                return h;
+            }
         }
 
-        return max;
+        return 0;
     }
 }
